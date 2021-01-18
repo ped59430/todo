@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Todos snapshot testing 1`] = `
-<div class="q-card q-mt-lg full-width" uid="0" description="zero">
-  <div class="q-item q-item-type row no-wrap flex-center">
-    <h1>Todos</h1>
+<div class="q-pt-lg col-xs-12 col-sm-6 col-md-4" uid="0" description="zero">
+  <div></div>
+  <div class="title text-center q-mt-xl"><span class="text-weight-medium">todo</span>toudou.
   </div>
   <div>
-    <div class="q-list q-list--bordered q-list--separator"></div>
+    <div class="q-list q-list--separator"></div>
     <div class="q-item q-item-type row no-wrap flex-center">
-      <h5 class="text-grey-8">No Todos Item, try add some down here</h5>
+      <h5 class="text-grey-8">No todotoudous</h5>
     </div>
     <div class="q-item q-item-type row no-wrap column">
       <!---->
