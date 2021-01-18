@@ -1,6 +1,6 @@
 # Quasar App
 
-[![Build Status](https://travis-ci.com/superoo7/todo-app.svg?branch=master)](https://travis-ci.com/superoo7/todo-app) [![Netlify Status](https://api.netlify.com/api/v1/badges/04108034-f0da-4616-94f0-5803467dd0c6/deploy-status)](https://app.netlify.com/sites/vigilant-lovelace-25a2cd/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fe3c224f-2c0e-4a26-a0fb-a28dfe642397/deploy-status)](https://app.netlify.com/sites/cranky-nightingale-f2d44f/deploys)
 
 Simple ToDo App build with Quasar Framework for SPA, PWA, SSR, Android, iOS, MacOS, Linux and Windows.
 
@@ -9,6 +9,7 @@ Back end written in Express, TypeScript, Node.js
 The app used network to store todo, and fallback to LocalStorage if network not exist.
 
 ## Requirement
+
 - Node.js > v8.9.0
 - Yarn installed
 
