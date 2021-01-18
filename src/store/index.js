@@ -2,8 +2,6 @@ import Vue from "vue";
 import Vuex from "vuex";
 import todo from "./todo";
 
-// import example from './module-example'
-
 Vue.use(Vuex);
 
 /*

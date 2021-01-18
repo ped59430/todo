@@ -1,7 +1,6 @@
 /dist
+/src-bex/www
+/src-capacitor
 /src-cordova
-/src-electron
-/src-ssr
-/src-pwa
-/server
-/test
+/.quasar
+/node_modules

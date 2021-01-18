@@ -1,7 +1,7 @@
 <template>
-  <div class="q-pt-lg col-xs-12 col-sm-6 col-md-4">
+  <div class="q-pt-xl q-mt-xl col-xs-12 col-sm-6 col-md-4">
     <div></div>
-    <div class="title text-center q-mt-xl">
+    <div class="title text-center q-pt-xl q-mt-xl">
       <span class="text-weight-medium">todo</span>toudou.
     </div>
     <div>
@@ -25,6 +25,7 @@
 <script>
 import TodoItemVue from "./TodoItem.vue";
 import NewTodoItemVue from "./NewTodoItem.vue";
+
 export default {
   name: "Todos",
   components: {
@@ -53,6 +54,6 @@ export default {
 <style scoped>
 .title {
   color: white;
-  font-size: 37px;
+  font-size: 2em;
 }
 </style>
