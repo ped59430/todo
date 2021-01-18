@@ -1,7 +1,7 @@
 <template>
-  <q-card class="q-mt-lg full-width">
+  <div class="q-mt-lg full-width">
     <q-item class="flex-center">
-      <h1>Todos</h1>
+      <h4 class="title"><span>todo</span>toudou.</h4>
     </q-item>
     <div>
       <q-list bordered separator>
@@ -18,7 +18,7 @@
       </q-item>
       <new-todo-item />
     </div>
-  </q-card>
+  </div>
 </template>
 
 <script>
@@ -28,7 +28,7 @@ export default {
   name: "Todos",
   components: {
     "todo-item": TodoItemVue,
-    "new-todo-item": NewTodoItemVue
+    "new-todo-item": NewTodoItemVue,
   },
   data() {
     return {};
@@ -36,17 +36,25 @@ export default {
   computed: {
     todos() {
       return this.$store.state.todo.todos;
-    }
+    },
   },
   methods: {
     getAllTodo() {
       this.$store.dispatch("todo/serverGetAllTodos");
-    }
+    },
   },
   mounted() {
     this.getAllTodo();
-  }
+  },
 };
 </script>
 
-<style></style>
+<style scoped>
+.title {
+  color: white;
+}
+
+.title > span {
+  font-weight: 700;
+}
+</style>
