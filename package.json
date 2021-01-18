@@ -1,8 +1,8 @@
 {
-  "name": "todo-app",
+  "name": "todo",
   "version": "0.0.1",
   "description": "To Do App with Quasar Framework",
-  "productName": "ToDo App",
+  "productName": "todotoudou.",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Lai Weng Han <jlwhoo7@gmail.com>",
   "private": true,

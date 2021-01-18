@@ -7,11 +7,13 @@ describe("Landing", () => {
     cy.visit("/");
   });
   it(".should() - assert that <title> is correct", () => {
-    cy.title().should("include", "ToDo App");
+    cy.title().should("include", "todotoudou.");
   });
   it(".should() - assert that header is correct", () => {
-    cy.get("#q-app").find("div.q-item.q-item-type.row.no-wrap.flex-center > h1").contains("Todo")
-  })
+    cy.get("#q-app")
+      .find("div.q-item.q-item-type.row.no-wrap.flex-center > h1")
+      .contains("Todo");
+  });
 });
 
 // describe('Home page tests', () => {

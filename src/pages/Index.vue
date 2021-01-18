@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex items-start justify-center q-px-lg">
+  <q-page class="row items-start justify-center q-px-lg">
     <todos />
   </q-page>
 </template>
@@ -12,7 +12,7 @@ import TodosVue from "../components/Todos.vue";
 export default {
   name: "PageIndex",
   components: {
-    todos: TodosVue
-  }
+    todos: TodosVue,
+  },
 };
 </script>

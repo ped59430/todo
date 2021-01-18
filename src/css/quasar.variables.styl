@@ -5,10 +5,25 @@
 
 // Check documentation for full list of Quasar variables
 
+
+// Set the default font-family
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+$typography-font-family = 'Poppins', sans-serif;
+// Fix font-weight values to match the imported font family weights
+$text-weights ?= {
+  thin: 300,
+  light: 400,
+  regular: 600,
+  medium: 700,
+  bold: 800,
+  bolder: 800
+}
+$button-font-weight ?= 600
+
+
 // It's highly recommended to change the default colors
 // to match your app's branding.
 // Tip: Use the "Theme Builder" on Quasar's documentation website.
-
 $primary   = #027BE3
 $secondary = #26A69A
 $accent    = #9C27B0
