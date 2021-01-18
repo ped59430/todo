@@ -28,9 +28,6 @@
           class="col-xs-8 col-md-10"
           >{{ description }}</span
         >
-        <q-btn class="col-xs-2 col-md-1 bg-red flex-center" @click="deleteTodo">
-          <q-icon color="white" name="delete"></q-icon>
-        </q-btn>
       </div>
     </q-item>
   </div>
@@ -42,20 +39,17 @@ export default {
   props: {
     uid: { type: Number, required: true },
     description: { type: String, required: true },
-    done: { type: Boolean, required: true }
+    done: { type: Boolean, required: true },
   },
   data() {
     return {
       editMode: false,
-      inputText: ""
+      inputText: "",
     };
   },
   methods: {
     editTodo(todo) {
       return this.$store.dispatch("todo/serverEditTodo", todo);
-    },
-    deleteTodo() {
-      return this.$store.dispatch("todo/serverDeleteTodo", this.uid);
     },
     setEditTrue() {
       this.editMode = true;
@@ -67,28 +61,28 @@ export default {
       await this.editTodo({
         uid: this.uid,
         description: this.inputText,
-        done: this.done
+        done: this.done,
       });
       this.editMode = false;
-    }
+    },
   },
   computed: {
     checkbox: {
-      get: function() {
+      get: function () {
         return this.done;
       },
-      set: function() {
+      set: function () {
         this.editTodo({
           uid: this.uid,
           description: this.description,
-          done: !this.done
+          done: !this.done,
         });
-      }
-    }
+      },
+    },
   },
   mounted() {
     this.inputText = this.description;
-  }
+  },
 };
 </script>
 
