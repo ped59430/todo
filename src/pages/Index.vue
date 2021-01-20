@@ -1,6 +1,6 @@
 <template>
   <q-page class="row justify-center q-px-lg">
-    <div class="q-pt-xl q-mt-xl col-xs-12 col-sm-6 col-md-4">
+    <div class="q-pt-xl q-mt-xl col-xs-auto col-sm-auto col-md-auto">
       <todo-title />
       <todo-list />
     </div>
