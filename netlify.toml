@@ -2,7 +2,6 @@
   base = ""
   publish = "dist/pwa"
   command = "npm build"
-  environment = { NPM_VERSION = "6.13.14" }
 
 [[redirects]]
   from = "/*"
