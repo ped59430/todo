@@ -1,10 +1,11 @@
 <template>
-  <div class="text-center q-pt-lg q-mt-lg">
+  <div class="q-pt-mt q-mt-sm todo-list">
     <div>
       <q-list>
         <todo-item
           v-for="(todo, key) in todos"
           :key="key"
+          :number="key"
           :uid="todo.uid"
           :description="todo.description"
           :done="todo.done"
@@ -43,4 +44,7 @@ export default {
 </script>
 
 <style scoped>
+.todo-list {
+  width: 450px;
+}
 </style>
