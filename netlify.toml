@@ -1,8 +1,8 @@
 [build]
   base    = ""
   publish = "dist/pwa"
-  command = "yarn build"
-  environment = { YARN_VERSION = "1.13.0" }
+  command = "npm build"
+  environment = { NPM_VERSION = "6.13.14" }
 
 [[redirects]]
   from = "/*"
