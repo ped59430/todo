@@ -1,23 +1,24 @@
 <template>
-  <q-item class="column">
-    <div class="full-width" v-if="errorMessage !== ''">
-      <span class="text-red">{{ errorMessage }}</span>
-    </div>
-    <div class="full-width row">
-      <q-input
-        class="col-xs-8 col-md-10"
-        ref="textinput"
-        v-model="value"
-        filled
-        autofocus
-        @keydown.enter="submit"
-      />
-      <q-btn class="col-xs-4 col-md-2 flex-center" @click="submit"
-        >Submit</q-btn
-      >
-    </div>
-  </q-item>
+  <div>
+    <q-item>
+      <div class="fit row wrap justify-center items-start content-start">
+        <q-btn
+          size="md"
+          padding="lg"
+          color="white"
+          text-color="primary"
+          round
+          icon="add"
+          :ripple="false"
+          unelevated
+          @click="submit"
+        >
+        </q-btn>
+      </div>
+    </q-item>
+  </div>
 </template>
+
 <script>
 export default {
   data() {
@@ -28,16 +29,10 @@ export default {
   },
   methods: {
     async submit() {
-      if (this.value === "") {
-        this.errorMessage = "No data entered";
-        return;
-      }
       await this.addTodo({
-        description: this.value,
+        description: "",
         done: false
       });
-      this.errorMessage = "";
-      this.value = "";
     },
     addTodo(todo) {
       return this.$store.dispatch("todo/serverAddTodo", todo);
