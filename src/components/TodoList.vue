@@ -11,9 +11,6 @@
           :done="todo.done"
         />
       </q-list>
-      <q-item v-if="todos.length === 0" class="flex-center">
-        <h5 class="text-grey-8">No todotoudous</h5>
-      </q-item>
     </div>
   </div>
 </template>
