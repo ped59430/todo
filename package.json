@@ -13,8 +13,7 @@
     "test": "echo \"No test specified\" && exit 0",
     "bootstrap": "node ./scripts/bootstrap-fauna-database.js",
     "build": "npm-run-all --parallel build:**",
-    "build:app": "quasar build -m pwa",
-    "build:functions": "netlify-lambda build functions -c ./webpack.config.js"
+    "build:app": "quasar build -m pwa"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
