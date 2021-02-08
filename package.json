@@ -9,10 +9,12 @@
     "dev": "npm-run-all --parallel dev:app dev:server",
     "dev:app": "quasar dev",
     "dev:server": "netlify-lambda serve functions -c ./webpack.config.js",
-    "build": "quasar build -m pwa",
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0",
-    "bootstrap": "node ./scripts/bootstrap-fauna-database.js"
+    "bootstrap": "node ./scripts/bootstrap-fauna-database.js",
+    "build": "npm-run-all --parallel build:**",
+    "build:app": "quasar build -m pwa",
+    "build:functions": "netlify-lambda build functions -c ./webpack.config.js"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
