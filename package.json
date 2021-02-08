@@ -6,15 +6,19 @@
   "author": "pier.cordier@gmail.com",
   "private": true,
   "scripts": {
-    "dev": "quasar dev",
+    "dev": "npm-run-all --parallel dev:app dev:server",
+    "dev:app": "quasar dev",
+    "dev:server": "netlify-lambda serve functions -c ./webpack.config.js",
     "build": "quasar build -m pwa",
     "lint": "eslint --ext .js,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "bootstrap": "node ./scripts/bootstrap-fauna-database.js"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
-    "quasar": "^1.0.0"
+    "quasar": "^1.0.0",
+    "faunadb": "^2.13.1"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",
@@ -22,22 +26,16 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-loader": "^3.0.3",
-    "eslint-plugin-vue": "^6.1.2"
+    "eslint-plugin-vue": "^6.1.2",
+    "netlify-lambda": "^2.0.3",
+    "npm-run-all": "^4.1.5"
   },
-  "browserslist": [
-    "last 10 Chrome versions",
-    "last 10 Firefox versions",
-    "last 4 Edge versions",
-    "last 7 Safari versions",
-    "last 8 Android versions",
-    "last 8 ChromeAndroid versions",
-    "last 8 FirefoxAndroid versions",
-    "last 10 iOS versions",
-    "last 5 Opera versions"
-  ],
-  "engines": {
-    "node": ">= 10.18.1",
-    "npm": ">= 6.13.4",
-    "yarn": ">= 1.21.1"
+  "proxy": {
+    "/.netlify/functions": {
+      "target": "http://localhost:9000",
+      "pathRewrite": {
+        "^/\\.netlify/functions": ""
+      }
+    }
   }
 }

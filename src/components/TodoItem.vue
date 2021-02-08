@@ -1,8 +1,8 @@
 <template>
   <div>
-    <q-item v-if="isDone" v-touch-swipe.mouse.left.right="handler">
+    <q-item v-if="isCompleted" v-touch-swipe.mouse.left.right="handler">
       <div class="flex content-back justify-end">
-        <div class="flex content-front-done">
+        <div class="flex content-front-completed">
           <q-item-section side class="content-front-number">
             <q-icon
               :size="'35px'"
@@ -12,9 +12,9 @@
           </q-item-section>
           <q-item-section
             no-wrap
-            class="text-weight-light content-front-text-done"
+            class="text-weight-light content-front-text-completed"
           >
-            {{ description }}
+            {{ title }}
           </q-item-section>
         </div>
       </div>
@@ -33,7 +33,7 @@
             </q-avatar>
           </q-item-section>
           <q-item-section no-wrap class="text-weight-light content-front-text">
-            {{ description }}
+            {{ title }}
           </q-item-section>
         </div>
       </div>
@@ -45,29 +45,32 @@
 export default {
   name: "TodoItem",
   props: {
-    done: { type: Boolean, required: true },
     number: { type: Number, required: true },
-    uid: { type: Number, required: true },
-    description: { type: String, required: true },
+    uid: { type: String, required: true },
+    title: { type: String, required: true },
+    completed: { type: Boolean, required: true },
   },
   data() {
     return {
       editMode: false,
-      isDone: true,
+      isCompleted: false,
     };
   },
   watch: {
-    done: function (newValue, old) {
-      this.isDone = newValue;
-    },
+    completed: {
+      handler(val, oldVal) {
+         this.isCompleted = val;
+      },
+      immediate: true
+    }
   },
   methods: {
     handler(obj) {
       if (obj.direction === "right") {
-        this.isDone = true;
+        this.isCompleted = true;
       }
       if (obj.direction === "left") {
-        this.isDone = false;
+        this.isCompleted = false;
       }
     },
   },
@@ -91,7 +94,7 @@ export default {
   width: 70%;
 }
 
-.content-front-done {
+.content-front-completed {
   background-color: $primary;
   border-radius: 50px;
   margin-top: 7.5px;
@@ -100,7 +103,7 @@ export default {
   width: 70%;
 }
 
-.content-front-text-done {
+.content-front-text-completed {
   margin-left: 15px;
   font-weight: 500;
   font-size: 13px;

@@ -6,9 +6,9 @@
           v-for="(todo, key) in todos"
           :key="key"
           :number="key"
-          :uid="todo.uid"
-          :description="todo.description"
-          :done="todo.done"
+          :uid="todo.ref['@ref'].id"
+          :title="todo.data.title"
+          :completed="todo.data.completed"
         />
       </q-list>
     </div>
@@ -26,12 +26,12 @@ export default {
   },
   computed: {
     todos() {
-      return this.$store.state.todo.todos;
+      return this.$store.state.todoItem.list;
     },
   },
   methods: {
     getAllTodo() {
-      this.$store.dispatch("todo/serverGetAllTodos");
+      this.$store.dispatch("todoItem/readAll");
     },
   },
   mounted() {
