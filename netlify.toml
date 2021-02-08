@@ -1,7 +1,8 @@
 [build]
+  functions = "functions"
   base = ""
-  publish = "dist/pwa"
   command = "npm run build"
+  publish = "dist/pwa"
 
 [[redirects]]
   from = "/*"

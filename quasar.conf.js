@@ -73,6 +73,16 @@ module.exports = function (/* ctx */) {
       https: false,
       port: 8080,
       open: true, // opens browser window automatically
+      proxy: {
+        // proxy all requests starting with /api to jsonplaceholder
+        '/.netlify/functions': {
+          target: 'http://localhost:9000',
+          pathRewrite: {
+            "^/\\.netlify/functions": ""
+          }
+        }
+      }
+      
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
